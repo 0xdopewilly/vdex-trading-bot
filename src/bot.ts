@@ -57,7 +57,7 @@ class TradingEngine {
     else log.warn("DRY_RUN is OFF — this WILL place live orders with real capital.");
 
     this.market = await this.resolveMarket();
-    log.info(`Market resolved`, this.market);
+    log.info(`Market resolved`, { market: this.market });
 
     // Sanity-check connectivity & capital up front.
     const margin = await api.getAvailableMargin(this.market.quoteToken);
