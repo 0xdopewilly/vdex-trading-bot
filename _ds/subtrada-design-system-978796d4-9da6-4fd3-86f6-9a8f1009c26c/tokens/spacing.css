@@ -1,0 +1,51 @@
+/* ==========================================================================
+   SubTrada — Spacing, radii, shadows, motion
+   8px-ish soft grid (with a 4px half-step). Restrained radii: controls 6–10px,
+   cards 12px, pills full. Shadows are soft and low — paper-document feel,
+   not heavy material elevation.
+   ========================================================================== */
+
+:root {
+  /* ---- Spacing scale ------------------------------------------------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  14px;   /* default card gutter step in product             */
+  --space-5:  18px;
+  --space-6:  22px;   /* card padding                                    */
+  --space-7:  28px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 56px;   /* page side gutter                                */
+  --space-16: 80px;   /* chapter rhythm                                  */
+
+  /* ---- Radii --------------------------------------------------------- */
+  --radius-xs:   4px;   /* tags, num chips, status pills' square kin      */
+  --radius-sm:   6px;   /* small controls                                */
+  --radius-md:   8px;   /* buttons, inputs                               */
+  --radius-lg:   10px;  /* panels                                        */
+  --radius-xl:   12px;  /* cards, screenshots, dialogs                   */
+  --radius-2xl:  16px;  /* hero / media frames                           */
+  --radius-pill: 999px;
+
+  /* ---- Shadows (soft, document-grade) -------------------------------- */
+  --shadow-xs: 0 1px 0 rgba(0,0,0,0.04);
+  --shadow-sm: 0 1px 0 rgba(0,0,0,0.04), 0 2px 6px rgba(20, 25, 25, 0.04);
+  --shadow-md: 0 1px 2px rgba(0,0,0,0.05), 0 8px 24px rgba(20, 25, 25, 0.06);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.25), 0 4px 14px rgba(0,0,0,0.12);
+  --shadow-pop: 0 12px 32px rgba(10, 20, 23, 0.18), 0 2px 6px rgba(10,20,23,0.10);
+
+  /* ---- Borders ------------------------------------------------------- */
+  --border-width: 1px;
+
+  /* ---- Motion -------------------------------------------------------- */
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);    /* @kind other */
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1); /* @kind other */
+  --dur-fast:     120ms;  /* @kind other */
+  --dur-base:     220ms;  /* @kind other */
+  --dur-slow:     280ms;  /* @kind other */
+
+  /* ---- Layout -------------------------------------------------------- */
+  --sidebar-w:    248px;  /* @kind other */
+  --content-max:  920px;   /* document reading measure  @kind other       */
+}

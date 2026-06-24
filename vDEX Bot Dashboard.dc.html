@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/subtrada-design-system-978796d4-9da6-4fd3-86f6-9a8f1009c26c/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/subtrada-design-system-978796d4-9da6-4fd3-86f6-9a8f1009c26c/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/subtrada-design-system-978796d4-9da6-4fd3-86f6-9a8f1009c26c/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/subtrada-design-system-978796d4-9da6-4fd3-86f6-9a8f1009c26c/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/subtrada-design-system-978796d4-9da6-4fd3-86f6-9a8f1009c26c/styles.css">
+  <script src="_ds/subtrada-design-system-978796d4-9da6-4fd3-86f6-9a8f1009c26c/_ds_bundle.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; }
+    * { box-sizing: border-box; }
+    @keyframes stPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(168,85,247,0.55); }
+      70%  { box-shadow: 0 0 0 7px rgba(168,85,247,0); }
+      100% { box-shadow: 0 0 0 0 rgba(168,85,247,0); }
+    }
+    /* ── vDEX dark theme — re-skins the SubTrada tokens to the brand's
+         indigo→violet→magenta palette on a near-black violet ground. ── */
+    :root {
+      --st-teal:           #A855F7;
+      --st-ink:            #0b0a14;
+
+      --st-ink-900:        #07060e;
+      --st-ink-850:        #0b0a14;
+      --st-ink-800:        #100e1c;
+      --st-ink-700:        #211d38;
+      --st-ink-600:        #2a2547;
+      --st-ink-500:        #353052;
+
+      --st-mint:           #A855F7;
+      --st-mint-strong:    #C04DE0;
+      --st-mint-deep:      #CBA6FF;
+      --st-mint-soft:      rgba(168,85,247,0.16);
+      --st-mint-line:      rgba(168,85,247,0.34);
+
+      --st-paper:          #0b0a14;
+      --st-paper-2:        #1c1930;
+      --st-paper-card:     #161427;
+      --st-paper-ink:      #ECEAF8;
+      --st-paper-ink-dim:  #8E88A8;
+      --st-paper-line:     rgba(165,135,255,0.12);
+      --st-paper-line-2:   rgba(165,135,255,0.22);
+
+      --st-on-ink:         #ECEAF8;
+      --st-on-ink-dim:     #9A95B5;
+      --st-on-ink-faint:   #6E6A85;
+      --st-line-on-ink:    rgba(255,255,255,0.06);
+      --st-line-on-ink-2:  rgba(255,255,255,0.12);
+
+      --st-success:        #34D399;
+      --st-success-soft:   rgba(52,211,153,0.14);
+      --st-success-line:   rgba(52,211,153,0.30);
+
+      --st-info:           #8B7BFF;
+      --st-info-soft:      rgba(139,123,255,0.14);
+      --st-info-line:      rgba(139,123,255,0.28);
+
+      --st-violet:         #C084FC;
+      --st-violet-soft:    rgba(192,132,252,0.14);
+      --st-violet-line:    rgba(192,132,252,0.28);
+
+      --st-warn:           #F5B364;
+      --st-warn-soft:      rgba(245,179,100,0.14);
+      --st-warn-line:      rgba(245,179,100,0.30);
+
+      --st-danger:         #FB6B83;
+      --st-danger-soft:    rgba(251,107,131,0.14);
+      --st-danger-line:    rgba(251,107,131,0.30);
+
+      --st-neutral:        #8E88A8;
+      --st-neutral-soft:   rgba(142,136,168,0.12);
+      --st-neutral-line:   rgba(142,136,168,0.24);
+
+      --text-body:         #C9C5DC;
+      --focus-ring:        rgba(168,85,247,0.45);
+    }
+  </style>
+</helmet>
+
+<div style="display:flex; min-height:100vh; background:var(--surface-page); font-family:var(--font-sans); color:var(--text-body); -webkit-font-smoothing:antialiased;">
+
+  <!-- ─────────────────────────── SIDEBAR (ink) ─────────────────────────── -->
+  <aside style="width:248px; flex:none; background:var(--surface-sidebar); color:var(--text-on-dark); display:flex; flex-direction:column; padding:22px 16px; border-right:1px solid var(--st-line-on-ink);">
+
+    <div style="display:flex; align-items:center; gap:11px; padding:6px 8px 22px;">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+        <rect x="0" y="1" width="16" height="11" rx="2" style="fill:var(--st-on-ink); opacity:.82;"></rect>
+        <rect x="18" y="1" width="8" height="11" rx="2" style="fill:#E0319A;"></rect>
+        <rect x="0" y="14" width="8" height="11" rx="2" style="fill:#6D5EF6;"></rect>
+        <rect x="10" y="14" width="16" height="11" rx="2" style="fill:var(--st-on-ink); opacity:.82;"></rect>
+      </svg>
+      <div style="line-height:1.1;">
+        <div style="font-weight:600; font-size:16px; letter-spacing:-0.01em; color:var(--text-on-dark);">vDEX</div>
+        <div style="font-family:var(--font-mono); font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--st-mint);">Trading Engine</div>
+      </div>
+    </div>
+
+    <nav style="display:flex; flex-direction:column; gap:2px;">
+      <!-- Overview -->
+      <sc-if value="{{ navOverview }}" hint-placeholder-val="{{ true }}">
+        <div onClick="{{ goOverview }}" style="display:flex; align-items:center; gap:11px; padding:9px 11px; border-radius:8px; font-size:13.5px; cursor:pointer; font-weight:500; background:var(--st-mint-soft); color:var(--st-mint);">
+          <x-import component-from-global-scope="SubTradaDesignSystem_978796.Icon" name="dashboard" size="18" hint-size="18px,18px"></x-import>
+          <span>Overview</span>
+        </div>
+      </sc-if>
+      <sc-if value="{{ navNotOverview }}" hint-placeholder-val="{{ false }}">
+        <div onClick="{{ goOverview }}" style="display:flex; align-items:center; gap:11px; padding:9px 11px; border-radius:8px; font-size:13.5px; cursor:pointer; font-weight:400; background:transparent; color:var(--text-on-dark-muted); transition:background var(--dur-fast), color var(--dur-fast);" style-hover="background:var(--st-line-on-ink); color:var(--st-on-ink);">
+          <x-import component-from-global-scope="SubTradaDesignSystem_978796.Icon" name="dashboard" size="18" hint-size="18px,18px"></x-import>
+          <span>Overview</span>
+        </div>
+      </sc-if>
+
+      <!-- Positions -->
+      <sc-if value="{{ navPositions }}" hint-placeholder-val="{{ false }}">
+        <div onClick="{{ goPositions }}" style="display:flex; align-items:center; gap:11px; padding:9px 11px; border-radius:8px; font-size:13.5px; cursor:pointer; font-weight:500; background:var(--st-mint-soft); color:var(--st-mint);">
+          <x-import component-from-global-scope="SubTradaDesignSystem_978796.Icon" name="briefcase" size="18" hint-size="18px,18px"></x-import>
+          <span>Positions</span>
+        </div>
+      </sc-if>
+      <sc-if value="{{ navNotPositions }}" hint-placeholder-val="{{ true }}">
+        <div onClick="{{ goPositions }}" style="display:flex; align-items:center; gap:11px; padding:9px 11px; border-radius:8px; font-size:13.5px; cursor:pointer; font-weight:400; background:transparent; color:var(--text-on-dark-muted); transition:background var(--dur-fast), color var(--dur-fast);" style-hover="background:var(--st-line-on-ink); color:var(--st-on-ink);">
+          <x-import component-from-global-scope="SubTradaDesignSystem_978796.Icon" name="briefcase" size="18" hint-size="18px,18px"></x-import>
+          <span>Positions</span>
+        </div>
+      </sc-if>
+
+      <!-- Activity -->
+      <sc-if value="{{ navActivity }}" hint-placeholder-val="{{ false }}">
+        <div onClick="{{ goActivity }}" style="display:flex; align-items:center; gap:11px; padding:9px 11px; border-radius:8px; font-size:13.5px; cursor:pointer; font-weight:500; background:var(--st-mint-soft); color:var(--st-mint);">
+          <x-import component-from-global-scope="SubTradaDesignSystem_978796.Icon" name="clock" size="18" hint-size="18px,18px"></x-import>
+          <span>Activity</span>
+        </div>
+      </sc-if>
+      <sc-if value="{{ navNotActivity }}" hint-placeholder-val="{{ true }}">
+        <div onClick="{{ goActivity }}" style="display:flex; align-items:center; gap:11px; padding:9px 11px; border-radius:8px; font-size:13.5px; cursor:pointer; font-weight:400; background:transparent; color:var(--text-on-dark-muted); transition:background var(--dur-fast), color var(--dur-fast);" style-hover="background:var(--st-line-on-ink); color:var(--st-on-ink);">
+          <x-import component-from-global-scope="SubTradaDesignSystem_978796.Icon" name="clock" size="18" hint-size="18px,18px"></x-import>
+          <span>Activity</span>
+        </div>
+      </sc-if>
+
+      <!-- Strategy -->
+      <sc-if value="{{ navStrategy }}" hint-placeholder-val="{{ false }}">
+        <div onClick="{{ goStrategy }}" style="display:flex; align-items:center; gap:11px; padding:9px 11px; border-radius:8px; font-size:13.5px; cursor:pointer; font-weight:500; background:var(--st-mint-soft); color:var(--st-mint);">
+          <x-import component-from-global-scope="SubTradaDesignSystem_978796.Icon" name="zap" size="18" hint-size="18px,18px"></x-import>
+          <span>Strategy</span>
+        </div>
+      </sc-if>
+      <sc-if value="{{ navNotStrategy }}" hint-placeholder-val="{{ true }}">
+        <div onClick="{{ goStrategy }}" style="display:flex; align-items:center; gap:11px; padding:9px 11px; border-radius:8px; font-size:13.5px; cursor:pointer; font-weight:400; background:transparent; color:var(--text-on-dark-muted); transition:background var(--dur-fast), color var(--dur-fast);" style-hover="background:var(--st-line-on-ink); color:var(--st-on-ink);">
+          <x-import component-from-global-scope="SubTradaDesignSystem_978796.Icon" name="zap" size="18" hint-size="18px,18px"></x-import>
+          <span>Strategy</span>
+        </div>
+      </sc-if>
+
+      <!-- Settings -->
+      <sc-if value="{{ navSettings }}" hint-placeholder-val="{{ false }}">
+        <div onClick="{{ goSettings }}" style="display:flex; align-items:center; gap:11px; padding:9px 11px; border-radius:8px; font-size:13.5px; cursor:pointer; font-weight:500; background:var(--st-mint-soft); color:var(--st-mint);">
+          <x-import component-from-global-scope="SubTradaDesignSystem_978796.Icon" name="settings" size="18" hint-size="18px,18px"></x-import>
+          <span>Settings</span>
+        </div>
+      </sc-if>
+      <sc-if value="{{ navNotSettings }}" hint-placeholder-val="{{ true }}">
+        <div onClick="{{ goSettings }}" style="display:flex; align-items:center; gap:11px; padding:9px 11px; border-radius:8px; font-size:13.5px; cursor:pointer; font-weight:400; background:transparent; color:var(--text-on-dark-muted); transition:background var(--dur-fast), color var(--dur-fast);" style-hover="background:var(--st-line-on-ink); color:var(--st-on-ink);">
+          <x-import component-from-global-scope="SubTradaDesignSystem_978796.Icon" name="settings" size="18" hint-size="18px,18px"></x-import>
+          <span>Settings</span>
+        </div>
+      </sc-if>
+    </nav>
+
+    <div style="margin-top:auto; display:flex; flex-direction:column; gap:14px;">
+      <div style="display:inline-flex; align-self:flex-start; align-items:center; gap:7px; padding:6px 10px; border:1px solid var(--st-mint-line); border-radius:999px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--st-mint);">
+        <span style="width:6px; height:6px; border-radius:999px; background:var(--st-mint);"></span>
+        Dry Run
+      </div>
+      <div style="display:flex; align-items:center; gap:10px; padding-top:14px; border-top:1px solid var(--st-line-on-ink);">
+        <x-import component-from-global-scope="SubTradaDesignSystem_978796.Avatar" name="Quant Operator" tone="ink" hint-size="36px,36px"></x-import>
+        <div style="line-height:1.2;">
+          <div style="font-size:13px; color:var(--text-on-dark);">Quant Operator</div>
+          <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-on-dark-muted);">Acct · 0x9f…21</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ─────────────────────────── MAIN (paper) ─────────────────────────── -->
+  <main style="flex:1; min-width:0; max-height:100vh; overflow:auto;">
+
+    <!-- Top bar -->
+    <header style="display:flex; align-items:flex-start; justify-content:space-between; gap:24px; padding:26px 40px 22px; border-bottom:1px solid var(--border-subtle); background:var(--surface-page); position:sticky; top:0; z-index:5;">
+      <div>
+        <div style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent-on-paper);">Automated Execution Engine</div>
+        <h1 style="margin:6px 0 10px; font-size:30px; font-weight:600; letter-spacing:-0.025em; color:var(--text-strong);">vDEX Trading Bot</h1>
+        <div style="display:flex; gap:8px;">
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.04em; padding:4px 10px; border:1px solid var(--border-strong); border-radius:999px; color:var(--text-body); white-space:nowrap;">{{ strategyLabel }}</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.04em; padding:4px 10px; border:1px solid var(--border-strong); border-radius:999px; color:var(--text-body); white-space:nowrap;">ETH / USD</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.04em; padding:4px 10px; border:1px solid var(--border-strong); border-radius:999px; color:var(--text-body); white-space:nowrap;">POLL · 15s</span>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; flex:none; padding-top:4px;">
+        <x-import component-from-global-scope="SubTradaDesignSystem_978796.Badge" tone="{{ statusTone }}" dot="{{ true }}" hint-size="auto,26px">{{ statusLabel }}</x-import>
+        <sc-if value="{{ running }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ toggleRun }}" style="display:inline-flex; align-items:center; gap:7px; font-family:var(--font-sans); font-size:13.5px; font-weight:500; padding:9px 17px; border-radius:8px; border:1px solid var(--border-strong); background:transparent; color:var(--text-strong); cursor:pointer; transition:background var(--dur-fast), border-color var(--dur-fast);" style-hover="background:var(--st-mint-soft); border-color:var(--st-mint-line);">Pause Engine</button>
+        </sc-if>
+        <sc-if value="{{ paused }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ toggleRun }}" style="display:inline-flex; align-items:center; gap:7px; font-family:var(--font-sans); font-size:13.5px; font-weight:600; padding:10px 18px; border-radius:8px; border:none; background:linear-gradient(90deg,#6D5EF6,#A855F7 55%,#E0319A); color:#fff; cursor:pointer; box-shadow:0 6px 18px rgba(168,85,247,0.35);">Resume Engine</button>
+        </sc-if>
+        <button onClick="{{ exportLog }}" style="display:inline-flex; align-items:center; gap:7px; font-family:var(--font-sans); font-size:13.5px; font-weight:500; padding:9px 16px; border-radius:8px; border:1px solid var(--border-strong); background:transparent; color:var(--text-strong); cursor:pointer; transition:background var(--dur-fast), border-color var(--dur-fast);" style-hover="background:var(--st-mint-soft); border-color:var(--st-mint-line);">
+          <x-import component-from-global-scope="SubTradaDesignSystem_978796.Icon" name="download" size="16" hint-size="16px,16px"></x-import>
+          Export Log
+        </button>
+      </div>
+    </header>
+
+    <div style="padding:26px 40px 40px;">
+
+    <!-- ════════════════════════ OVERVIEW TAB ════════════════════════ -->
+    <sc-if value="{{ isOverview }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex; flex-direction:column; gap:22px;">
+
+      <!-- Stat row -->
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:14px;">
+        <x-import component-from-global-scope="SubTradaDesignSystem_978796.StatCard" icon="briefcase" value="{{ marginFmt }}" label="Available Margin" tone="teal" style="width:100%" hint-size="100%,112px"></x-import>
+        <x-import component-from-global-scope="SubTradaDesignSystem_978796.StatCard" icon="clipboard" value="{{ openFmt }}" label="Open Positions" tone="neutral" style="width:100%" hint-size="100%,112px"></x-import>
+        <x-import component-from-global-scope="SubTradaDesignSystem_978796.StatCard" icon="zap" value="{{ realisedFmt }}" label="Realised P&L" tone="{{ pnlStatTone }}" style="width:100%" hint-size="100%,112px"></x-import>
+        <x-import component-from-global-scope="SubTradaDesignSystem_978796.StatCard" icon="check-circle" value="{{ winRateFmt }}" label="{{ winLabel }}" tone="neutral" style="width:100%" hint-size="100%,112px"></x-import>
+      </div>
+
+      <!-- Row A: live market + activity -->
+      <div style="display:grid; grid-template-columns:1.55fr 1fr; gap:22px; align-items:start;">
+
+        <!-- Live market panel -->
+        <section style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:12px; box-shadow:var(--shadow-sm); overflow:hidden;">
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 22px; border-bottom:1px solid var(--border-subtle);">
+            <h2 style="margin:0; font-size:18px; font-weight:600; letter-spacing:-0.01em; color:var(--text-strong);">Live Market</h2>
+            <div style="display:flex; align-items:center; gap:7px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent-on-paper);">
+              <span style="width:7px; height:7px; border-radius:999px; background:var(--accent-strong); animation:stPulse 1.8s var(--ease-out) infinite;"></span>
+              Live Feed
+            </div>
+          </div>
+          <div style="padding:22px;">
+            <div style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-muted);">Last Price · ETH/USD</div>
+            <div style="display:flex; align-items:baseline; gap:14px; margin-top:6px;">
+              <div style="font-family:var(--font-mono); font-weight:600; font-size:42px; letter-spacing:-0.02em; color:var(--text-strong);">{{ priceFmt }}</div>
+              <div style="font-family:var(--font-mono); font-size:15px; font-weight:500; color:{{ changeColor }};">{{ changeFmt }}</div>
+            </div>
+
+            <svg viewBox="{{ sparkViewBox }}" preserveAspectRatio="none" width="100%" height="116" style="display:block; margin-top:16px;">
+              <defs>
+                <linearGradient id="vdexLine" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#6D5EF6"></stop>
+                  <stop offset="55%" stop-color="#A855F7"></stop>
+                  <stop offset="100%" stop-color="#E0319A"></stop>
+                </linearGradient>
+                <linearGradient id="vdexArea" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#A855F7" stop-opacity="0.30"></stop>
+                  <stop offset="100%" stop-color="#A855F7" stop-opacity="0"></stop>
+                </linearGradient>
+              </defs>
+              <path d="{{ sparkArea }}" style="fill:url(#vdexArea); stroke:none;"></path>
+              <polyline points="{{ smaPoints }}" style="fill:none; stroke:var(--text-muted); stroke-width:1.25; stroke-dasharray:4 4; opacity:.55; stroke-linecap:round; stroke-linejoin:round;"></polyline>
+              <polyline points="{{ sparkPoints }}" style="fill:none; stroke:url(#vdexLine); stroke-width:2; stroke-linecap:round; stroke-linejoin:round;"></polyline>
+              <circle cx="{{ dotX }}" cy="{{ dotY }}" r="3.5" style="fill:#E0319A; stroke:var(--surface-card); stroke-width:2;"></circle>
+            </svg>
+
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:20px; margin-top:18px; padding-top:18px; border-top:1px solid var(--border-subtle);">
+              <div style="min-width:0;">
+                <div style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-muted);">Signal</div>
+                <div style="font-family:var(--font-mono); font-weight:600; font-size:26px; letter-spacing:-0.01em; color:{{ signalColor }}; margin-top:2px;">{{ signalAction }}</div>
+                <div style="font-size:12.5px; color:var(--text-muted); margin-top:4px; max-width:340px; text-wrap:pretty;">{{ signalReason }}</div>
+              </div>
+              <div style="display:flex; gap:24px; flex:none;">
+                <div style="text-align:right;">
+                  <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">SMA(20)</div>
+                  <div style="font-family:var(--font-mono); font-size:16px; font-weight:500; color:var(--text-strong); margin-top:3px;">{{ smaFmt }}</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">Deviation</div>
+                  <div style="font-family:var(--font-mono); font-size:16px; font-weight:500; color:var(--text-strong); margin-top:3px;">{{ deviationFmt }}</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">Entry Band</div>
+                  <div style="font-family:var(--font-mono); font-size:16px; font-weight:500; color:var(--text-strong); margin-top:3px;">{{ thresholdFmt }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Activity panel -->
+        <section style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:12px; box-shadow:var(--shadow-sm); overflow:hidden;">
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 22px; border-bottom:1px solid var(--border-subtle);">
+            <h2 style="margin:0; font-size:18px; font-weight:600; letter-spacing:-0.01em; color:var(--text-strong);">Execution Log</h2>
+            <span style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">{{ logCountFmt }}</span>
+          </div>
+          <div style="padding:6px 22px 14px;">
+            <sc-for list="{{ logs }}" as="row" hint-placeholder-count="5">
+              <div style="display:flex; gap:11px; align-items:flex-start; padding:9px 0; border-bottom:1px solid var(--border-subtle);">
+                <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-muted); flex:none; padding-top:1px; letter-spacing:0.02em;">{{ row.time }}</span>
+                <span style="width:7px; height:7px; border-radius:999px; flex:none; margin-top:5px; background:{{ row.color }};"></span>
+                <span style="font-size:12.5px; color:var(--text-body); line-height:1.45; text-wrap:pretty;">{{ row.msg }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+      </div>
+
+      <!-- Row B: positions + risk config -->
+      <div style="display:grid; grid-template-columns:1.55fr 1fr; gap:22px; align-items:start;">
+
+        <!-- Positions panel -->
+        <section style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:12px; box-shadow:var(--shadow-sm); overflow:hidden;">
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 22px; border-bottom:1px solid var(--border-subtle);">
+            <h2 style="margin:0; font-size:18px; font-weight:600; letter-spacing:-0.01em; color:var(--text-strong);">Open Positions</h2>
+            <span style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">Max {{ maxFmt }}</span>
+          </div>
+
+          <table style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr>
+                <th style="text-align:left; padding:11px 22px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Side</th>
+                <th style="text-align:left; padding:11px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Market</th>
+                <th style="text-align:right; padding:11px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Qty</th>
+                <th style="text-align:right; padding:11px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Entry</th>
+                <th style="text-align:right; padding:11px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Stop</th>
+                <th style="text-align:right; padding:11px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Target</th>
+                <th style="text-align:right; padding:11px 22px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">P&L</th>
+              </tr>
+            </thead>
+            <tbody>
+              <sc-for list="{{ positions }}" as="pos" hint-placeholder-count="1">
+                <tr>
+                  <td style="padding:14px 22px; border-bottom:1px solid var(--border-subtle);">
+                    <span style="display:inline-flex; align-items:center; gap:6px; font-family:var(--font-mono); font-size:11px; font-weight:600; letter-spacing:0.06em; color:{{ pos.dirColor }};">
+                      <span style="width:6px; height:6px; border-radius:999px; background:{{ pos.dirColor }};"></span>{{ pos.dirLabel }}
+                    </span>
+                  </td>
+                  <td style="padding:14px 10px; border-bottom:1px solid var(--border-subtle); font-size:13px; color:var(--text-strong);">{{ pos.symbol }}</td>
+                  <td style="padding:14px 10px; border-bottom:1px solid var(--border-subtle); text-align:right; font-family:var(--font-mono); font-size:12.5px; color:var(--text-body);">{{ pos.qty }}</td>
+                  <td style="padding:14px 10px; border-bottom:1px solid var(--border-subtle); text-align:right; font-family:var(--font-mono); font-size:12.5px; color:var(--text-body);">{{ pos.entry }}</td>
+                  <td style="padding:14px 10px; border-bottom:1px solid var(--border-subtle); text-align:right; font-family:var(--font-mono); font-size:12.5px; color:var(--st-danger);">{{ pos.sl }}</td>
+                  <td style="padding:14px 10px; border-bottom:1px solid var(--border-subtle); text-align:right; font-family:var(--font-mono); font-size:12.5px; color:var(--st-success);">{{ pos.tp }}</td>
+                  <td style="padding:14px 22px; border-bottom:1px solid var(--border-subtle); text-align:right; font-family:var(--font-mono); font-size:13px; font-weight:600; color:{{ pos.pnlColor }};">{{ pos.pnl }}</td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+
+          <sc-if value="{{ noPositions }}" hint-placeholder-val="{{ true }}">
+            <div style="padding:34px 22px; text-align:center;">
+              <div style="font-size:13.5px; color:var(--text-muted);">No open positions — the engine is watching for an entry signal.</div>
+            </div>
+          </sc-if>
+        </section>
+
+        <!-- Risk & Config panel -->
+        <section style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:12px; box-shadow:var(--shadow-sm); overflow:hidden;">
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 22px; border-bottom:1px solid var(--border-subtle);">
+            <h2 style="margin:0; font-size:18px; font-weight:600; letter-spacing:-0.01em; color:var(--text-strong);">Risk &amp; Config</h2>
+            <span style="display:inline-flex; align-items:center; gap:6px; padding:4px 9px; border:1px solid var(--st-mint-line); border-radius:999px; font-family:var(--font-mono); font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent-on-paper);">Dry Run</span>
+          </div>
+          <div style="padding:8px 22px 16px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+              <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Strategy</span>
+              <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-strong);">{{ strategyLabel }}</span>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+              <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Max Allocation</span>
+              <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-strong);">10% of margin</span>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+              <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Leverage</span>
+              <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-strong);">2× · isolated</span>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+              <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Stop Loss</span>
+              <span style="font-family:var(--font-mono); font-size:13px; color:var(--st-danger);">−2.00%</span>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+              <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Take Profit</span>
+              <span style="font-family:var(--font-mono); font-size:13px; color:var(--st-success);">+6.00%</span>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+              <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Entry Band</span>
+              <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-strong);">{{ thresholdFmt }}</span>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0;">
+              <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Min Balance</span>
+              <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-strong);">$10.00</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- ════════════════════════ POSITIONS TAB ════════════════════════ -->
+    <sc-if value="{{ isPositions }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex; flex-direction:column; gap:22px;">
+
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:14px;">
+        <x-import component-from-global-scope="SubTradaDesignSystem_978796.StatCard" icon="clipboard" value="{{ openFmt }}" label="Open Positions" tone="neutral" style="width:100%" hint-size="100%,112px"></x-import>
+        <x-import component-from-global-scope="SubTradaDesignSystem_978796.StatCard" icon="zap" value="{{ realisedFmt }}" label="Realised P&L" tone="{{ pnlStatTone }}" style="width:100%" hint-size="100%,112px"></x-import>
+        <x-import component-from-global-scope="SubTradaDesignSystem_978796.StatCard" icon="check-circle" value="{{ winRateFmt }}" label="Win Rate" tone="neutral" style="width:100%" hint-size="100%,112px"></x-import>
+        <x-import component-from-global-scope="SubTradaDesignSystem_978796.StatCard" icon="briefcase" value="{{ tradesFmt }}" label="Closed Trades" tone="neutral" style="width:100%" hint-size="100%,112px"></x-import>
+      </div>
+
+      <!-- Open positions -->
+      <section style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:12px; box-shadow:var(--shadow-sm); overflow:hidden;">
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 22px; border-bottom:1px solid var(--border-subtle);">
+          <h2 style="margin:0; font-size:18px; font-weight:600; letter-spacing:-0.01em; color:var(--text-strong);">Open Positions</h2>
+          <span style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">Max {{ maxFmt }}</span>
+        </div>
+        <table style="width:100%; border-collapse:collapse;">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding:11px 22px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Side</th>
+              <th style="text-align:left; padding:11px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Market</th>
+              <th style="text-align:right; padding:11px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Qty</th>
+              <th style="text-align:right; padding:11px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Entry</th>
+              <th style="text-align:right; padding:11px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Stop</th>
+              <th style="text-align:right; padding:11px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Target</th>
+              <th style="text-align:right; padding:11px 22px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">P&L</th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{ positions }}" as="pos" hint-placeholder-count="1">
+              <tr>
+                <td style="padding:14px 22px; border-bottom:1px solid var(--border-subtle);">
+                  <span style="display:inline-flex; align-items:center; gap:6px; font-family:var(--font-mono); font-size:11px; font-weight:600; letter-spacing:0.06em; color:{{ pos.dirColor }};">
+                    <span style="width:6px; height:6px; border-radius:999px; background:{{ pos.dirColor }};"></span>{{ pos.dirLabel }}
+                  </span>
+                </td>
+                <td style="padding:14px 10px; border-bottom:1px solid var(--border-subtle); font-size:13px; color:var(--text-strong);">{{ pos.symbol }}</td>
+                <td style="padding:14px 10px; border-bottom:1px solid var(--border-subtle); text-align:right; font-family:var(--font-mono); font-size:12.5px; color:var(--text-body);">{{ pos.qty }}</td>
+                <td style="padding:14px 10px; border-bottom:1px solid var(--border-subtle); text-align:right; font-family:var(--font-mono); font-size:12.5px; color:var(--text-body);">{{ pos.entry }}</td>
+                <td style="padding:14px 10px; border-bottom:1px solid var(--border-subtle); text-align:right; font-family:var(--font-mono); font-size:12.5px; color:var(--st-danger);">{{ pos.sl }}</td>
+                <td style="padding:14px 10px; border-bottom:1px solid var(--border-subtle); text-align:right; font-family:var(--font-mono); font-size:12.5px; color:var(--st-success);">{{ pos.tp }}</td>
+                <td style="padding:14px 22px; border-bottom:1px solid var(--border-subtle); text-align:right; font-family:var(--font-mono); font-size:13px; font-weight:600; color:{{ pos.pnlColor }};">{{ pos.pnl }}</td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+        <sc-if value="{{ noPositions }}" hint-placeholder-val="{{ true }}">
+          <div style="padding:34px 22px; text-align:center;">
+            <div style="font-size:13.5px; color:var(--text-muted);">No open positions — the engine is watching for an entry signal.</div>
+          </div>
+        </sc-if>
+      </section>
+
+      <!-- Trade history -->
+      <section style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:12px; box-shadow:var(--shadow-sm); overflow:hidden;">
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 22px; border-bottom:1px solid var(--border-subtle);">
+          <h2 style="margin:0; font-size:18px; font-weight:600; letter-spacing:-0.01em; color:var(--text-strong);">Trade History</h2>
+          <span style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">{{ historyCountFmt }}</span>
+        </div>
+        <table style="width:100%; border-collapse:collapse;">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding:11px 22px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Side</th>
+              <th style="text-align:left; padding:11px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Market</th>
+              <th style="text-align:right; padding:11px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Qty</th>
+              <th style="text-align:right; padding:11px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Entry</th>
+              <th style="text-align:right; padding:11px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Exit</th>
+              <th style="text-align:center; padding:11px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Result</th>
+              <th style="text-align:right; padding:11px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">P&L</th>
+              <th style="text-align:right; padding:11px 22px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500; border-bottom:1px solid var(--border-subtle);">Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{ historyRows }}" as="h" hint-placeholder-count="4">
+              <tr>
+                <td style="padding:13px 22px; border-bottom:1px solid var(--border-subtle);">
+                  <span style="display:inline-flex; align-items:center; gap:6px; font-family:var(--font-mono); font-size:11px; font-weight:600; letter-spacing:0.06em; color:{{ h.dirColor }};">
+                    <span style="width:6px; height:6px; border-radius:999px; background:{{ h.dirColor }};"></span>{{ h.dirLabel }}
+                  </span>
+                </td>
+                <td style="padding:13px 10px; border-bottom:1px solid var(--border-subtle); font-size:13px; color:var(--text-strong);">{{ h.symbol }}</td>
+                <td style="padding:13px 10px; border-bottom:1px solid var(--border-subtle); text-align:right; font-family:var(--font-mono); font-size:12.5px; color:var(--text-body);">{{ h.qty }}</td>
+                <td style="padding:13px 10px; border-bottom:1px solid var(--border-subtle); text-align:right; font-family:var(--font-mono); font-size:12.5px; color:var(--text-body);">{{ h.entry }}</td>
+                <td style="padding:13px 10px; border-bottom:1px solid var(--border-subtle); text-align:right; font-family:var(--font-mono); font-size:12.5px; color:var(--text-body);">{{ h.exit }}</td>
+                <td style="padding:13px 10px; border-bottom:1px solid var(--border-subtle); text-align:center; font-family:var(--font-mono); font-size:11px; font-weight:600; letter-spacing:0.06em; color:{{ h.resultColor }};">{{ h.result }}</td>
+                <td style="padding:13px 10px; border-bottom:1px solid var(--border-subtle); text-align:right; font-family:var(--font-mono); font-size:13px; font-weight:600; color:{{ h.pnlColor }};">{{ h.pnl }}</td>
+                <td style="padding:13px 22px; border-bottom:1px solid var(--border-subtle); text-align:right; font-family:var(--font-mono); font-size:11.5px; color:var(--text-muted);">{{ h.time }}</td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+        <sc-if value="{{ noHistory }}" hint-placeholder-val="{{ true }}">
+          <div style="padding:34px 22px; text-align:center;">
+            <div style="font-size:13.5px; color:var(--text-muted);">No closed trades yet — completed positions will appear here.</div>
+          </div>
+        </sc-if>
+      </section>
+    </div>
+    </sc-if>
+
+    <!-- ════════════════════════ ACTIVITY TAB ════════════════════════ -->
+    <sc-if value="{{ isActivity }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex; flex-direction:column; gap:22px;">
+      <section style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:12px; box-shadow:var(--shadow-sm); overflow:hidden;">
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 22px; border-bottom:1px solid var(--border-subtle);">
+          <h2 style="margin:0; font-size:18px; font-weight:600; letter-spacing:-0.01em; color:var(--text-strong);">Execution Log</h2>
+          <span style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">{{ logCountFmt }}</span>
+        </div>
+        <div style="padding:6px 22px 16px;">
+          <sc-for list="{{ logs }}" as="row" hint-placeholder-count="8">
+            <div style="display:flex; gap:13px; align-items:flex-start; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+              <span style="font-family:var(--font-mono); font-size:11.5px; color:var(--text-muted); flex:none; padding-top:1px; letter-spacing:0.02em;">{{ row.time }}</span>
+              <span style="width:7px; height:7px; border-radius:999px; flex:none; margin-top:5px; background:{{ row.color }};"></span>
+              <span style="font-size:13px; color:var(--text-body); line-height:1.45; text-wrap:pretty;">{{ row.msg }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </div>
+    </sc-if>
+
+    <!-- ════════════════════════ STRATEGY TAB ════════════════════════ -->
+    <sc-if value="{{ isStrategy }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex; flex-direction:column; gap:22px;">
+
+      <!-- Strategy explainer -->
+      <section style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:12px; box-shadow:var(--shadow-sm); padding:24px 26px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <h2 style="margin:0; font-size:20px; font-weight:600; letter-spacing:-0.02em; color:var(--text-strong);">{{ strategyLabel }}</h2>
+          <x-import component-from-global-scope="SubTradaDesignSystem_978796.Badge" tone="violet" hint-size="auto,24px">Active</x-import>
+        </div>
+        <p style="margin:12px 0 20px; font-size:14px; line-height:1.6; color:var(--text-body); max-width:760px; text-wrap:pretty;">{{ strategyBlurb }}</p>
+        <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:14px;">
+          <div style="border:1px solid var(--border-subtle); border-radius:10px; padding:14px 16px;">
+            <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">Lookback</div>
+            <div style="font-family:var(--font-mono); font-size:18px; font-weight:600; color:var(--text-strong); margin-top:5px;">SMA · 20</div>
+          </div>
+          <div style="border:1px solid var(--border-subtle); border-radius:10px; padding:14px 16px;">
+            <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">Entry Band</div>
+            <div style="font-family:var(--font-mono); font-size:18px; font-weight:600; color:var(--text-strong); margin-top:5px;">{{ thresholdFmt }}</div>
+          </div>
+          <div style="border:1px solid var(--border-subtle); border-radius:10px; padding:14px 16px;">
+            <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">Poll</div>
+            <div style="font-family:var(--font-mono); font-size:18px; font-weight:600; color:var(--text-strong); margin-top:5px;">15s</div>
+          </div>
+          <div style="border:1px solid var(--border-subtle); border-radius:10px; padding:14px 16px;">
+            <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">Allocation</div>
+            <div style="font-family:var(--font-mono); font-size:18px; font-weight:600; color:var(--text-strong); margin-top:5px;">10%</div>
+          </div>
+        </div>
+      </section>
+
+      <div style="display:grid; grid-template-columns:1.55fr 1fr; gap:22px; align-items:start;">
+        <!-- Current signal -->
+        <section style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:12px; box-shadow:var(--shadow-sm); overflow:hidden;">
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 22px; border-bottom:1px solid var(--border-subtle);">
+            <h2 style="margin:0; font-size:18px; font-weight:600; letter-spacing:-0.01em; color:var(--text-strong);">Current Signal</h2>
+            <div style="display:flex; align-items:center; gap:7px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent-on-paper);">
+              <span style="width:7px; height:7px; border-radius:999px; background:var(--accent-strong); animation:stPulse 1.8s var(--ease-out) infinite;"></span>
+              Live
+            </div>
+          </div>
+          <div style="padding:22px; display:flex; align-items:center; justify-content:space-between; gap:20px;">
+            <div style="min-width:0;">
+              <div style="font-family:var(--font-mono); font-weight:600; font-size:34px; letter-spacing:-0.01em; color:{{ signalColor }};">{{ signalAction }}</div>
+              <div style="font-size:13px; color:var(--text-muted); margin-top:6px; max-width:360px; text-wrap:pretty;">{{ signalReason }}</div>
+            </div>
+            <div style="display:flex; gap:24px; flex:none;">
+              <div style="text-align:right;">
+                <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">Price</div>
+                <div style="font-family:var(--font-mono); font-size:16px; font-weight:500; color:var(--text-strong); margin-top:3px;">{{ priceFmt }}</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">SMA(20)</div>
+                <div style="font-family:var(--font-mono); font-size:16px; font-weight:500; color:var(--text-strong); margin-top:3px;">{{ smaFmt }}</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">Deviation</div>
+                <div style="font-family:var(--font-mono); font-size:16px; font-weight:500; color:var(--text-strong); margin-top:3px;">{{ deviationFmt }}</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Risk config -->
+        <section style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:12px; box-shadow:var(--shadow-sm); overflow:hidden;">
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 22px; border-bottom:1px solid var(--border-subtle);">
+            <h2 style="margin:0; font-size:18px; font-weight:600; letter-spacing:-0.01em; color:var(--text-strong);">Risk Bracket</h2>
+          </div>
+          <div style="padding:8px 22px 16px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+              <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Max Allocation</span>
+              <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-strong);">10% of margin</span>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+              <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Leverage</span>
+              <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-strong);">2× · isolated</span>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+              <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Stop Loss</span>
+              <span style="font-family:var(--font-mono); font-size:13px; color:var(--st-danger);">−2.00%</span>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+              <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Take Profit</span>
+              <span style="font-family:var(--font-mono); font-size:13px; color:var(--st-success);">+6.00%</span>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0;">
+              <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Entry Band</span>
+              <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-strong);">{{ thresholdFmt }}</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- ════════════════════════ SETTINGS TAB ════════════════════════ -->
+    <sc-if value="{{ isSettings }}" hint-placeholder-val="{{ false }}">
+    <div style="display:grid; grid-template-columns:1.1fr 1fr; gap:22px; align-items:start;">
+
+      <!-- Engine configuration -->
+      <section style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:12px; box-shadow:var(--shadow-sm); overflow:hidden;">
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 22px; border-bottom:1px solid var(--border-subtle);">
+          <h2 style="margin:0; font-size:18px; font-weight:600; letter-spacing:-0.01em; color:var(--text-strong);">Engine Configuration</h2>
+          <span style="display:inline-flex; align-items:center; gap:6px; padding:4px 9px; border:1px solid var(--st-mint-line); border-radius:999px; font-family:var(--font-mono); font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent-on-paper);">Dry Run</span>
+        </div>
+        <div style="padding:8px 22px 16px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+            <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Strategy</span>
+            <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-strong);">{{ strategyLabel }}</span>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+            <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Market</span>
+            <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-strong);">ETH / USD</span>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+            <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Max Allocation</span>
+            <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-strong);">10% of margin</span>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+            <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Leverage</span>
+            <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-strong);">2× · isolated</span>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+            <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Stop Loss / Take Profit</span>
+            <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-strong);">−2% / +6%</span>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-subtle);">
+            <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Poll Interval</span>
+            <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-strong);">15,000 ms</span>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:11px 0;">
+            <span style="font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Min Balance</span>
+            <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-strong);">$10.00</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Environment -->
+      <section style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:12px; box-shadow:var(--shadow-sm); overflow:hidden;">
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 22px; border-bottom:1px solid var(--border-subtle);">
+          <h2 style="margin:0; font-size:18px; font-weight:600; letter-spacing:-0.01em; color:var(--text-strong);">Environment</h2>
+        </div>
+        <div style="padding:18px 22px;">
+          <p style="margin:0 0 16px; font-size:13px; line-height:1.6; color:var(--text-muted); text-wrap:pretty;">Configuration is loaded from <span style="font-family:var(--font-mono); color:var(--text-body);">.env</span> via dotenv and validated in <span style="font-family:var(--font-mono); color:var(--text-body);">config.ts</span>. Edit values there, never here.</p>
+          <div style="background:var(--surface-sunken); border:1px solid var(--border-subtle); border-radius:10px; padding:16px 18px; font-family:var(--font-mono); font-size:12px; line-height:1.9; color:var(--text-body);">
+            <div><span style="color:var(--text-muted);">VDEX_BASE_URL=</span>api.vdex.trade/api-gateway</div>
+            <div><span style="color:var(--text-muted);">STRATEGY=</span>mean_reversion</div>
+            <div><span style="color:var(--text-muted);">DRY_RUN=</span><span style="color:var(--accent-on-paper);">true</span></div>
+            <div><span style="color:var(--text-muted);">POLL_INTERVAL_MS=</span>15000</div>
+            <div><span style="color:var(--text-muted);">MAX_ALLOCATION_PCT=</span>0.10</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px; margin-top:16px; padding:11px 14px; border:1px solid var(--st-warn-line); background:var(--st-warn-soft); border-radius:10px;">
+            <span style="width:7px; height:7px; border-radius:999px; background:var(--st-warn); flex:none;"></span>
+            <span style="font-size:12.5px; color:var(--text-body);">DRY_RUN is on — no live orders are submitted.</span>
+          </div>
+        </div>
+      </section>
+    </div>
+    </sc-if>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1340, &quot;height&quot;: 900 },
+  &quot;strategy&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;mean_reversion&quot;, &quot;trend_following&quot;], &quot;default&quot;: &quot;mean_reversion&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;entryThresholdPct&quot;: { &quot;editor&quot;: &quot;float&quot;, &quot;default&quot;: 1.0, &quot;min&quot;: 0.2, &quot;max&quot;: 3, &quot;step&quot;: 0.1, &quot;tsType&quot;: &quot;number&quot; },
+  &quot;startBalance&quot;: { &quot;editor&quot;: &quot;float&quot;, &quot;default&quot;: 100, &quot;min&quot;: 50, &quot;max&quot;: 1000, &quot;step&quot;: 10, &quot;tsType&quot;: &quot;number&quot; }
+}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const anchor = 2418.40;
+    const prices = [];
+    let p = anchor;
+    for (let i = 0; i < 48; i++) { p = this._step(p, anchor); prices.push(p); }
+
+    this._lastFastAbove = undefined;
+
+    const balance = Number(this.props.startBalance ?? 100);
+    const logs = [
+      this._entry("info", `Engine started · ${this._stratLabel()} · ETH/USD`),
+      this._entry("neutral", "Market resolved · base_asset_id eth-usd-perp"),
+      this._entry("info", `Available margin ${this._money(balance)} · DRY_RUN active`),
+    ];
+
+    this.state = {
+      tab: "overview",
+      prices,
+      running: true,
+      position: null,
+      balance,
+      realised: 0,
+      trades: 0,
+      wins: 0,
+      logs,
+      history: [],
+      tick: 0,
+    };
+  }
+
+  componentDidMount() { this._arm(); }
+  componentWillUnmount() { clearInterval(this._iv); }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.strategy !== this.props.strategy || prevProps.startBalance !== this.props.startBalance) {
+      this._reset();
+    }
+  }
+
+  _arm() {
+    clearInterval(this._iv);
+    if (this.state.running) this._iv = setInterval(() => this._tick(), 1500);
+  }
+
+  // ── Strategy / config (read live from props) ───────────────────────────────
+  _strategy() { return this.props.strategy ?? "mean_reversion"; }
+  _threshold() { return Number(this.props.entryThresholdPct ?? 1.0) / 100; }
+  _stratLabel() { return this._strategy() === "trend_following" ? "Trend Following" : "Mean Reversion"; }
+
+  // ── Simulation core ────────────────────────────────────────────────────────
+  _step(price, anchor) {
+    const noise = (Math.random() - 0.5) * 0.009;       // ±0.45% typical
+    const revert = ((anchor - price) / anchor) * 0.02;  // gentle pull to anchor
+    const jump = Math.random() < 0.06 ? (Math.random() - 0.5) * 0.022 : 0;
+    return Math.max(1, price * (1 + noise + revert + jump));
+  }
+
+  _sma(prices, len) {
+    if (prices.length < len) return null;
+    const w = prices.slice(-len);
+    return w.reduce((a, b) => a + b, 0) / len;
+  }
+
+  _entrySignal(prices, sma) {
+    const price = prices[prices.length - 1];
+    if (this._strategy() === "trend_following") {
+      const fast = this._sma(prices, 5);
+      const slow = this._sma(prices, 20);
+      if (fast == null || slow == null) return "hold";
+      const above = fast > slow;
+      const prev = this._lastFastAbove;
+      this._lastFastAbove = above;
+      if (prev === undefined) return "hold";
+      if (!prev && above) return "buy";
+      if (prev && !above) return "sell";
+      return "hold";
+    }
+    const dev = (price - sma) / sma;
+    const t = this._threshold();
+    if (dev <= -t) return "buy";
+    if (dev >= t) return "sell";
+    return "hold";
+  }
+
+  _tick() {
+    const s = this.state;
+    const anchor = 2418.40;
+    const price = this._step(s.prices[s.prices.length - 1], anchor);
+    const prices = [...s.prices, price].slice(-48);
+    const sma = this._sma(prices, 20);
+
+    let { position, balance, realised, trades, wins, logs, history } = s;
+
+    if (position) {
+      const hitTP = position.dir === "buy" ? price >= position.tp : price <= position.tp;
+      const hitSL = position.dir === "buy" ? price <= position.sl : price >= position.sl;
+      if (hitTP || hitSL) {
+        const pnl = (position.dir === "buy" ? price - position.entry : position.entry - price) * position.qty;
+        balance += pnl; realised += pnl; trades += 1; if (pnl > 0) wins += 1;
+        history = [{
+          dir: position.dir, symbol: position.symbol, entry: position.entry,
+          exit: price, qty: position.qty, pnl, result: hitTP ? "TP" : "SL", time: this._now(),
+        }, ...history].slice(0, 20);
+        logs = this._push(logs, pnl >= 0 ? "success" : "danger",
+          `Position closed ${position.dir.toUpperCase()} ${position.symbol} ${this._signed(pnl)} (${hitTP ? "TP" : "SL"})`);
+        position = null;
+      }
+    } else if (sma != null) {
+      const action = this._entrySignal(prices, sma);
+      if (action !== "hold") {
+        const alloc = balance * 0.10;
+        const qty = (alloc * 2) / price;
+        const sl = action === "buy" ? price * 0.98 : price * 1.02;
+        const tp = action === "buy" ? price * 1.06 : price * 0.94;
+        position = { dir: action, symbol: "ETH/USD", entry: price, qty, sl, tp, openedTick: s.tick };
+        logs = this._push(logs, "info",
+          `Order placed ${action.toUpperCase()} ${qty.toFixed(4)} ETH @ ${this._money(price)} · 2× · SL ${this._money(sl)} / TP ${this._money(tp)}`);
+      }
+    }
+
+    this.setState({ prices, position, balance, realised, trades, wins, logs, history, tick: s.tick + 1 });
+  }
+
+  _reset() {
+    const anchor = 2418.40;
+    const prices = [];
+    let p = anchor;
+    for (let i = 0; i < 48; i++) { p = this._step(p, anchor); prices.push(p); }
+    this._lastFastAbove = undefined;
+    const balance = Number(this.props.startBalance ?? 100);
+    this.setState({
+      prices, position: null, balance, realised: 0, trades: 0, wins: 0, tick: 0, history: [],
+      logs: [this._entry("info", `Strategy switched · ${this._stratLabel()} · margin ${this._money(balance)}`)],
+    });
+  }
+
+  // ── Handlers ───────────────────────────────────────────────────────────────
+  toggleRun = () => {
+    this.setState((s) => ({ running: !s.running }), () => {
+      this._arm();
+      if (!this.state.running) {
+        this.setState((s) => ({ logs: this._push(s.logs, "warn", "Engine paused by operator") }));
+      } else {
+        this.setState((s) => ({ logs: this._push(s.logs, "info", "Engine resumed") }));
+      }
+    });
+  };
+
+  setTab = (key) => this.setState({ tab: key });
+
+  exportLog = () => {
+    const text = this.state.logs.slice().reverse().map((e) => `${e.time}  ${e.msg}`).join("\n");
+    const blob = new Blob([text], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = "vdex-bot-activity.log";
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+  };
+
+  // ── Formatting ───────────────────────────────────────────────────────────────
+  _money(n) { return "$" + Number(n).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  _signed(n) { return (n >= 0 ? "+" : "-") + this._money(Math.abs(n)); }
+  _now() { return new Date().toLocaleTimeString("en-GB", { hour12: false }); }
+  _entry(tone, msg) { return { time: this._now(), msg, color: this._toneColor(tone) }; }
+  _push(logs, tone, msg) { return [this._entry(tone, msg), ...logs].slice(0, 11); }
+  _toneColor(t) {
+    return ({
+      success: "var(--st-success)", danger: "var(--st-danger)", info: "var(--st-info)",
+      warn: "var(--st-warn)", neutral: "var(--text-muted)",
+    })[t] || "var(--text-muted)";
+  }
+
+  renderVals() {
+    const s = this.state;
+    const prices = s.prices;
+    const price = prices[prices.length - 1] ?? 0;
+    const sma = this._sma(prices, 20);
+    const dev = sma ? (price - sma) / sma : 0;
+    const t = this._threshold();
+    const prevPrice = prices[prices.length - 2] ?? price;
+    const change = price - prevPrice;
+    const changePct = prevPrice ? (change / prevPrice) * 100 : 0;
+
+    // ── Display signal (no side effects) ──
+    let signalAction = "HOLD", signalColor = "var(--text-muted)", signalReason = "Within the entry band — no signal.";
+    if (s.position) {
+      signalAction = "IN TRADE"; signalColor = "var(--st-info)";
+      signalReason = "Position open — engine is managing the stop-loss / take-profit bracket.";
+    } else if (this._strategy() === "trend_following") {
+      const fast = this._sma(prices, 5), slow = this._sma(prices, 20);
+      if (fast && slow && fast > slow) { signalAction = "BUY"; signalColor = "var(--st-success)"; signalReason = "Fast SMA above slow SMA — uptrend bias."; }
+      else if (fast && slow) { signalAction = "SELL"; signalColor = "var(--st-danger)"; signalReason = "Fast SMA below slow SMA — downtrend bias."; }
+    } else {
+      if (dev <= -t) { signalAction = "BUY"; signalColor = "var(--st-success)"; signalReason = `Price ${(dev * 100).toFixed(2)}% below SMA(20) — expect reversion up.`; }
+      else if (dev >= t) { signalAction = "SELL"; signalColor = "var(--st-danger)"; signalReason = `Price +${(dev * 100).toFixed(2)}% above SMA(20) — expect reversion down.`; }
+    }
+
+    // ── Sparkline geometry ──
+    const W = 560, H = 116, padT = 12, padB = 14;
+    const min = Math.min(...prices), max = Math.max(...prices);
+    const range = (max - min) || 1;
+    const xf = (i) => (i / (prices.length - 1)) * W;
+    const yf = (v) => H - padB - ((v - min) / range) * (H - padT - padB);
+    const sparkPoints = prices.map((v, i) => `${xf(i).toFixed(1)},${yf(v).toFixed(1)}`).join(" ");
+    const sparkArea = `M ${xf(0).toFixed(1)},${yf(prices[0]).toFixed(1)} ` +
+      prices.map((v, i) => `L ${xf(i).toFixed(1)},${yf(v).toFixed(1)}`).join(" ") + ` L ${W},${H} L 0,${H} Z`;
+    const smaArr = [];
+    for (let i = 0; i < prices.length; i++) {
+      if (i >= 19) { const a = prices.slice(i - 19, i + 1).reduce((x, y) => x + y, 0) / 20; smaArr.push(`${xf(i).toFixed(1)},${yf(a).toFixed(1)}`); }
+    }
+
+    // ── Positions table ──
+    const positions = [];
+    if (s.position) {
+      const p = s.position;
+      const unreal = (p.dir === "buy" ? price - p.entry : p.entry - price) * p.qty;
+      positions.push({
+        dirLabel: p.dir.toUpperCase(),
+        dirColor: p.dir === "buy" ? "var(--st-success)" : "var(--st-danger)",
+        symbol: p.symbol,
+        qty: p.qty.toFixed(4),
+        entry: this._money(p.entry),
+        sl: this._money(p.sl),
+        tp: this._money(p.tp),
+        pnl: this._signed(unreal),
+        pnlColor: unreal >= 0 ? "var(--st-success)" : "var(--st-danger)",
+      });
+    }
+
+    const winRate = s.trades ? Math.round((s.wins / s.trades) * 100) + "%" : "—";
+
+    // ── Trade history ──
+    const historyRows = s.history.map((h) => ({
+      dirLabel: h.dir.toUpperCase(),
+      dirColor: h.dir === "buy" ? "var(--st-success)" : "var(--st-danger)",
+      symbol: h.symbol,
+      qty: h.qty.toFixed(4),
+      entry: this._money(h.entry),
+      exit: this._money(h.exit),
+      result: h.result,
+      resultColor: h.result === "TP" ? "var(--st-success)" : "var(--st-danger)",
+      pnl: this._signed(h.pnl),
+      pnlColor: h.pnl >= 0 ? "var(--st-success)" : "var(--st-danger)",
+      time: h.time,
+    }));
+
+    // ── Navigation ──
+    const tab = s.tab;
+    const navBg = (k) => (tab === k ? "var(--st-mint-soft)" : "transparent");
+    const navColor = (k) => (tab === k ? "var(--st-mint)" : "var(--text-on-dark-muted)");
+    const navWeight = (k) => (tab === k ? "500" : "400");
+
+    const strategyBlurb = this._strategy() === "trend_following"
+      ? "The engine polls ETH/USD every 15 seconds and compares a fast SMA(5) against a slow SMA(20). A bullish crossover opens a long, a bearish crossover opens a short, and every order ships with a protective stop-loss and take-profit bracket."
+      : "The engine polls ETH/USD every 15 seconds and measures price deviation from its SMA(20). When price stretches beyond the entry band it fades the move — buying dips, selling spikes — and every order ships with a protective stop-loss and take-profit bracket.";
+
+    return {
+      strategyBlurb,
+      goOverview: () => this.setTab("overview"),
+      goPositions: () => this.setTab("positions"),
+      goActivity: () => this.setTab("activity"),
+      goStrategy: () => this.setTab("strategy"),
+      goSettings: () => this.setTab("settings"),
+      ovBg: navBg("overview"), ovColor: navColor("overview"), ovWeight: navWeight("overview"),
+      poBg: navBg("positions"), poColor: navColor("positions"), poWeight: navWeight("positions"),
+      acBg: navBg("activity"), acColor: navColor("activity"), acWeight: navWeight("activity"),
+      stBg: navBg("strategy"), stColor: navColor("strategy"), stWeight: navWeight("strategy"),
+      seBg: navBg("settings"), seColor: navColor("settings"), seWeight: navWeight("settings"),
+      isOverview: tab === "overview",
+      isPositions: tab === "positions",
+      isActivity: tab === "activity",
+      isStrategy: tab === "strategy",
+      isSettings: tab === "settings",
+      notOverview: tab !== "overview",
+      notPositions: tab !== "positions",
+      notActivity: tab !== "activity",
+      notStrategy: tab !== "strategy",
+      notSettings: tab !== "settings",
+      navOverview: tab === "overview",   navNotOverview: tab !== "overview",
+      navPositions: tab === "positions", navNotPositions: tab !== "positions",
+      navActivity: tab === "activity",   navNotActivity: tab !== "activity",
+      navStrategy: tab === "strategy",   navNotStrategy: tab !== "strategy",
+      navSettings: tab === "settings",   navNotSettings: tab !== "settings",
+      historyRows,
+      noHistory: historyRows.length === 0,
+      historyCountFmt: `${historyRows.length} closed`,
+      tradesFmt: String(s.trades),
+      strategyLabel: this._stratLabel(),
+      statusLabel: s.running ? "Running" : "Paused",
+      statusTone: s.running ? "success" : "warn",
+      running: s.running,
+      paused: !s.running,
+      runLabel: s.running ? "Pause Engine" : "Resume Engine",
+      runVariant: s.running ? "secondary" : "accent",
+      toggleRun: this.toggleRun,
+      exportLog: this.exportLog,
+
+      marginFmt: this._money(s.balance),
+      openFmt: `${s.position ? 1 : 0} / 1`,
+      maxFmt: "1",
+      realisedFmt: this._signed(s.realised),
+      pnlStatTone: s.realised >= 0 ? "success" : "neutral",
+      winRateFmt: winRate,
+      winLabel: `Win Rate · ${s.trades} trades`,
+
+      priceFmt: this._money(price),
+      changeFmt: `${change >= 0 ? "+" : ""}${change.toFixed(2)} (${changePct >= 0 ? "+" : ""}${changePct.toFixed(2)}%)`,
+      changeColor: change >= 0 ? "var(--st-success)" : "var(--st-danger)",
+
+      signalAction, signalColor, signalReason,
+      smaFmt: sma ? this._money(sma) : "—",
+      deviationFmt: `${dev >= 0 ? "+" : ""}${(dev * 100).toFixed(2)}%`,
+      thresholdFmt: `±${(t * 100).toFixed(1)}%`,
+
+      sparkViewBox: `0 0 ${W} ${H}`,
+      sparkPoints,
+      sparkArea,
+      smaPoints: smaArr.join(" "),
+      dotX: xf(prices.length - 1).toFixed(1),
+      dotY: yf(price).toFixed(1),
+
+      logs: s.logs,
+      logCountFmt: `${s.logs.length} events`,
+      positions,
+      noPositions: positions.length === 0,
+    };
+  }
+}
+</script>
+</body>
+</html>

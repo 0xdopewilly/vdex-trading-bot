@@ -1,0 +1,44 @@
+/* ==========================================================================
+   SubTrada — Typography
+   Geist for everything UI. Geist Mono for labels, eyebrows, codes, metadata,
+   figures and table numerics. Tight tracking on display sizes; uppercase +
+   wide tracking on mono micro-labels is the signature SubTrada texture.
+   ========================================================================== */
+
+:root {
+  /* ---- Families ------------------------------------------------------ */
+  --font-sans: 'Geist', 'Söhne', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'JetBrains Mono', Menlo, monospace;
+
+  /* ---- Weights -------------------------------------------------------- */
+  --fw-regular:  400; /* @kind font */
+  --fw-medium:   500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold:     700; /* @kind font */
+
+  /* ---- Type scale (px) ----------------------------------------------- */
+  --fs-display:  56px;   /* hero titles — Geist 600, tracking -0.03em     */
+  --fs-h1:       38px;   /* chapter / page titles                         */
+  --fs-h2:       28px;   /* section titles                                */
+  --fs-h3:       18px;   /* card titles                                   */
+  --fs-lede:     19px;   /* intro paragraph                               */
+  --fs-body:     15.5px; /* default body                                  */
+  --fs-body-sm:  14.5px; /* dense body / table cells                      */
+  --fs-sm:       13px;   /* secondary / controls                          */
+  --fs-xs:       12px;   /* captions, mono metadata                       */
+  --fs-micro:    10.5px; /* uppercase mono labels                         */
+
+  /* ---- Line heights -------------------------------------------------- */
+  --lh-tight:    1.02;   /* @kind font */
+  --lh-snug:     1.15;   /* @kind font */
+  --lh-normal:   1.5;    /* @kind font */
+  --lh-relaxed:  1.65;   /* @kind font */
+
+  /* ---- Letter spacing ------------------------------------------------ */
+  --ls-display:  -0.03em;
+  --ls-heading:  -0.02em;
+  --ls-tight:    -0.01em;
+  --ls-normal:    0;       /* @kind font */
+  --ls-label:     0.14em;  /* uppercase mono micro-labels                 */
+  --ls-eyebrow:   0.18em;  /* hero eyebrow                                */
+}

@@ -1,0 +1,99 @@
+/* ==========================================================================
+   SubTrada — Colors
+   Construction procurement SaaS. Two surface worlds:
+   · INK    — the dark navy-teal app chrome (sidebars, headers, totals bars)
+   · PAPER  — the warm off-white content surface (dashboards, docs, forms)
+   Teal/mint is the single brand accent across both.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand core ---------------------------------------------------- */
+  --st-ink:            #1A2229;   /* logo ink / primary brand dark        */
+  --st-teal:           #2FD4C1;   /* canonical brand teal (the one block) */
+  --st-cream:          #F3F0E6;   /* logo cream / invert surface          */
+
+  /* ---- Ink scale (dark navy-teal surfaces) --------------------------- */
+  --st-ink-900:        #0a1417;   /* deepest — primary button, totals bar */
+  --st-ink-850:        #0c1418;   /* app background behind sidebar        */
+  --st-ink-800:        #0f1a1f;   /* sidebar surface                      */
+  --st-ink-700:        #11242c;   /* raised panel on dark                 */
+  --st-ink-600:        #173039;   /* panel-2 / hover on dark              */
+  --st-ink-500:        #2a3940;   /* window chrome / muted dark fill      */
+
+  /* ---- Mint / teal ramp ---------------------------------------------- */
+  --st-mint:           #5eead4;   /* primary mint (links, active, accents)*/
+  --st-mint-strong:    #2dd4bf;   /* deeper mint (gradients, dots)        */
+  --st-mint-deep:      #1e6f63;   /* mint for text on paper (AA on cream) */
+  --st-mint-soft:      rgba(94, 234, 212, 0.12);  /* tint fill           */
+  --st-mint-line:      rgba(94, 234, 212, 0.32);  /* tint border         */
+
+  /* ---- Paper scale (warm off-white content) -------------------------- */
+  --st-paper:          #f6f3ec;   /* main content background              */
+  --st-paper-2:        #efeae0;   /* sunken paper / code chip             */
+  --st-paper-card:     #ffffff;   /* cards on paper                       */
+  --st-paper-ink:      #16221f;   /* primary text on paper                */
+  --st-paper-ink-dim:  #5b6562;   /* secondary text on paper              */
+  --st-paper-line:     #e3ddcf;   /* hairline on paper                    */
+  --st-paper-line-2:   #d3cdbe;   /* stronger border on paper             */
+
+  /* ---- Text on ink --------------------------------------------------- */
+  --st-on-ink:         #e8efef;   /* primary text on dark                 */
+  --st-on-ink-dim:     #9aa9ad;   /* secondary text on dark               */
+  --st-on-ink-faint:   #6b797d;   /* tertiary / labels on dark            */
+  --st-line-on-ink:    rgba(255, 255, 255, 0.07);
+  --st-line-on-ink-2:  rgba(255, 255, 255, 0.14);
+
+  /* ---- Semantic status (tender lifecycle & compliance) --------------- */
+  /* Each status: a text/icon colour, a soft fill, and a border.         */
+  --st-success:        #15966f;   /* Won / Awarded / Verified / Active    */
+  --st-success-soft:   rgba(21, 150, 111, 0.12);
+  --st-success-line:   rgba(21, 150, 111, 0.28);
+
+  --st-info:           #2f6fed;   /* Sent                                 */
+  --st-info-soft:      rgba(47, 111, 237, 0.12);
+  --st-info-line:      rgba(47, 111, 237, 0.26);
+
+  --st-violet:         #7c5cff;   /* Viewed                               */
+  --st-violet-soft:    rgba(124, 92, 255, 0.12);
+  --st-violet-line:    rgba(124, 92, 255, 0.26);
+
+  --st-warn:           #b97e1c;   /* Pending / expiring / match% (on paper)*/
+  --st-warn-bright:    #f5b364;   /* warn accent on dark                  */
+  --st-warn-soft:      rgba(245, 179, 100, 0.14);
+  --st-warn-line:      rgba(185, 126, 28, 0.30);
+
+  --st-danger:         #d1463c;   /* Declined / overdue / delete          */
+  --st-danger-soft:    rgba(209, 70, 60, 0.12);
+  --st-danger-line:    rgba(209, 70, 60, 0.26);
+
+  --st-neutral:        #5b6562;   /* Not started / Completed / archived   */
+  --st-neutral-soft:   rgba(91, 101, 98, 0.10);
+  --st-neutral-line:   rgba(91, 101, 98, 0.22);
+
+  --st-gold:           #b8860b;   /* Tier verification badge accent       */
+  --st-gold-soft:      rgba(184, 134, 11, 0.12);
+  --st-gold-line:      rgba(184, 134, 11, 0.34);
+
+  /* ---- Semantic aliases (use these in components) -------------------- */
+  --surface-app:        var(--st-ink-850);
+  --surface-sidebar:    var(--st-ink-800);
+  --surface-panel-dark: var(--st-ink-700);
+  --surface-page:       var(--st-paper);
+  --surface-card:       var(--st-paper-card);
+  --surface-sunken:     var(--st-paper-2);
+
+  --text-strong:        var(--st-paper-ink);
+  --text-body:          #2c3633;
+  --text-muted:         var(--st-paper-ink-dim);
+  --text-on-dark:       var(--st-on-ink);
+  --text-on-dark-muted: var(--st-on-ink-dim);
+
+  --border-subtle:      var(--st-paper-line);
+  --border-strong:      var(--st-paper-line-2);
+
+  --accent:             var(--st-mint);
+  --accent-strong:      var(--st-mint-strong);
+  --accent-on-paper:    var(--st-mint-deep);
+
+  --focus-ring:         rgba(47, 212, 193, 0.45);
+}
